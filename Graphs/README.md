@@ -36,16 +36,26 @@ Output: A menu driven system which has the following options.
 
 
 Your program should resemble the following output (the user inputs are underlined):
-% java Project3
+
 Command? H
+
 Q Query the city information by entering the city code.
+
 D Find the minimum distance between two cities.
+
 I Insert a road by entering two city codes and distance.
+
 R Remove an existing road by entering two city codes.
+
 H Display this message.
+
 E Exit.
+
 Command? Q
 
+
 Programming Guides
+
 Create a Java Digraph (directed graph) class to store the city and road information.
+
 Use Dijkstra's algorithm discussed in class for finding the shortest distances between cities.
