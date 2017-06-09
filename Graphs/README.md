@@ -1,11 +1,15 @@
-
-Purpose:
+Purpose: 
 Implement a graph data structure for a practical application.
 
+
+
 Task Description:
+
 Input: Two files - one contains city data and the other contains road data.
+
 • city.dat: This file contains information about cities, 
-  where each line has 5 attributes: City Number, City_Code (2 letters), Full_City_Name, Population, and Elevation.
+ 
+ where each line has 5 attributes: City Number, City_Code (2 letters), Full_City_Name, Population, and Elevation.
 • road.dat: This file contains information about roads, 
   where each line has 3 attributes: From_City, To_City, and Distance. Note that all roads are assumed to be one-way.
   
