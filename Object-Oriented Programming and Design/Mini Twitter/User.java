@@ -9,9 +9,9 @@ import javax.swing.JList;
 public class User implements ObserveInterface, UserAndGroupInterface {
 
 	private String userID;
-	private ArrayList<String> followers;
-	private ArrayList<String> followings;
-	private ArrayList<String> newsfeed;
+	private List<String> followers;
+	private List<String> followings;
+	private List<String> newsfeed;
 //	private DefaultListModel<String>  newsfeedListMdel;
 	public User(String id) {
 		userID = id;
@@ -24,15 +24,15 @@ public class User implements ObserveInterface, UserAndGroupInterface {
 		return User.this;
 	}
 
-	public ArrayList<String> getFollowings() {
+	public List<String> getFollowings() {
 		return followings;
 	}
 
-	public ArrayList<String> getFollowers() {
+	public List<String> getFollowers() {
 		return followers;
 	}
 
-	public ArrayList<String> getNewsfeed() {
+	public List<String> getNewsfeed() {
 
 		return newsfeed;
 	}
