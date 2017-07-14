@@ -20,7 +20,7 @@ public class OpenUserView extends JFrame implements ViewInterface{
 	private List<String> followingIdList, newsfeed;
 	private DefaultListModel<String> followingListModel, newsfeedListModel;
 	private String msg, idToFollow;
-	private HashMap<String, User> userMap = AdminControlPanel.getUserMap();
+	private Map<String, User> userMap = AdminControlPanel.getUserMap();
 	
 	@SuppressWarnings("unchecked")
 	public OpenUserView (User user) {
@@ -63,7 +63,7 @@ public class OpenUserView extends JFrame implements ViewInterface{
 		followingList = new JList<String>(followingListModel);
 		followingList.setBounds(10, 65, 415, 145);
 		contentPane.add(followingList);
-		followingIdList =  (ArrayList<String>) currentUser.getFollowings().clone();	
+		followingIdList = (List<String>)  ((ArrayList<String>) currentUser.getFollowings()).clone();	
 		//Add followings to list
 		for (int i = 0; i < followingIdList.size(); i++){
 			followingListModel.addElement(followingIdList.get(i));
@@ -71,7 +71,7 @@ public class OpenUserView extends JFrame implements ViewInterface{
 
 		newsfeedList = new JList<String>(newsfeedListModel);
 		newsfeedList.setBounds(10, 290, 415, 115);
-		newsfeed = (ArrayList<String>) currentUser.getNewsfeed().clone();
+		newsfeed = (List<String>) ((ArrayList<String>) currentUser.getNewsfeed()).clone();
 		contentPane.add(newsfeedList);
 		for (int i = 0; i < newsfeed.size(); i++){
 			newsfeedListModel.addElement(newsfeed.get(i));
@@ -109,11 +109,11 @@ public class OpenUserView extends JFrame implements ViewInterface{
 	
 	private class PostTweetButtonListener implements ActionListener{
 		public void actionPerformed(ActionEvent e){				
-			msg = "-   " + currentUser.getId() + ": " + msgField.getText();
-			
+			msg = msgField.getText();
+			String toNewsFeed = currentUser.getId() + ": " + msg;
 			notifyObservers(msg);
 			currentUser.update(msg);
-			newsfeedListModel.addElement(msg);
+			newsfeedListModel.addElement(toNewsFeed);
 			
 			CountTotalMsg msgTotal = new CountTotalMsg();
 			msgTotal.visited();
