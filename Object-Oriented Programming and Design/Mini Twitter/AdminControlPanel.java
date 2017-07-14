@@ -17,8 +17,8 @@ public class AdminControlPanel extends JPanel {
 	private static AdminControlPanel instance = null;
 
 	private JTextField userIDTxt, groupIDTxt;
-	private static HashMap<String, User> userMap = new HashMap<>();
-	private static HashMap<String, Group> groupMap = new HashMap<>();
+	private static Map<String, User> userMap = new HashMap<>();
+	private static Map<String, Group> groupMap = new HashMap<>();
 	private JTree tree;
 	private TreeModel model;
 	private DefaultMutableTreeNode root;
@@ -248,7 +248,7 @@ public class AdminControlPanel extends JPanel {
 	public void visit(CountTotalGroup totalgroup) {
 		totalgroup.visited();
 	}
-	public static HashMap<String, User> getUserMap () {
+	public static Map<String, User> getUserMap () {
 		return userMap;
 	}
 
