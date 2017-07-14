@@ -145,7 +145,7 @@ public class OpenUserView extends JFrame implements ViewInterface{
 			//User currentFollower = userMap.get(follower);
 			//System.out.println(currentFollower.getNewsfeed());
 			JOptionPane.showMessageDialog(null, "NewsFeed Notification for " + follower + "\n" 
-					+ currentUser.getId() + " says " + msg.substring(5));
+					+ currentUser.getId() + " says " + msg);
 			
 		}	
 	}
